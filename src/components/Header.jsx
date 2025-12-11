@@ -1,5 +1,8 @@
 import { NavLink, Link } from "react-router-dom";
 import Logo from "./Logo";
+import { BudgetContext } from "../context/BudgetContext";
+import { useContext } from "react";
+
 export default function Header() {
     const links = [{
         nome: "Homepage",
@@ -14,6 +17,14 @@ export default function Header() {
         path: "/prodotti",
     }
     ]
+
+    const { budget, setBudget, handleClick } = useContext(BudgetContext) // Use context modo in cui utilliziamo per chiamare per prendere i dati che sttiamo nel budgetcontext
+
+   
+
+    function ModificaTestoBottone() {
+        return budget ? "Disattiva budget" : "Imposta budget"
+    }
 
 
     return (
@@ -36,6 +47,7 @@ export default function Header() {
                                 </NavLink>
                             ))}
                         </ul>
+                        <button className="btn btn-primary" onClick={handleClick}>{ModificaTestoBottone()}</button>
                     </div>
                 </div>
             </nav>

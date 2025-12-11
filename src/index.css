@@ -1,0 +1,31 @@
+body {
+    font-family: sans-serif;
+}
+
+.navbar-nav .nav-link.active {
+    color: rgb(60, 60, 169);
+}
+.navbar-nav {
+    color:white;
+}
+
+body {
+    background-image: 
+    url('./assets/img/img-harrypotter.jpg');
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color:white;   
+}
+
+.navbar-logo {
+    max-height: 60px;
+    width:auto;
+    margin-right: 15px;
+}
+
+
+
+
+
+

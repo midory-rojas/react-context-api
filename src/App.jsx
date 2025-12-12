@@ -13,7 +13,8 @@ function App() {
 
   return (
     <> 
-      <BudgetForProvider>
+    {/* Impostazione del app jsx, cosi tutti i componenti hanno acceso */}
+      <BudgetForProvider> 
         <BrowserRouter>
           <Routes>
             <Route element={<DefaultLayout />}>

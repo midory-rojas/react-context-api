@@ -1,32 +1,41 @@
 
-import { createContext, useState} from "react"; //Createcontext permitte di convidiere il context in tutti i componenti
+import { createContext, useContext, useState} from "react"; //Createcontext permitte di convidiere il context in tutti i componenti
 
 
 const BudgetContext = createContext() //Primo paso
 
 function BudgetForProvider ({children}) {
-    const [budget, setBudget] = useState(false)
+    const [budget, setBudget] = useState(false);
 
+    //Creazione della seconda funzione per attivare e dessativare il budget
 
-    const valori = {
+    function toggleBudget() {
+        setBudget((current) => !current);
+    }
+
+    const contextValue = {
         budget,
         setBudget,
-        handleClick,
+        toggleBudget
     }
 
-        function handleClick() {
-        return setBudget(prev => prev ? false : true);
-    }
 
     return(
 
-       < BudgetContext.Provider value={valori}> 
+       < BudgetContext.Provider value={contextValue}> 
        {children}
        </BudgetContext.Provider>
 
     )
 }
 
-export {BudgetForProvider, BudgetContext}
+//Creazione della prima funzione per il uso di budget
+function usoBudget() {
+    const contextValue = useContext(BudgetContext)
+    return contextValue;
+}
+
+
+export {BudgetForProvider, usoBudget}
 
 //Provider ---> Componente speciale quando c'è il createContext

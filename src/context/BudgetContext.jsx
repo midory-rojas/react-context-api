@@ -31,7 +31,7 @@ function BudgetForProvider ({children}) {
 
 //Creazione della prima funzione per il uso di budget
 function usoBudget() {
-    const contextValue = useContext(BudgetContext)
+    const contextValue = useContext(BudgetContext);
     return contextValue;
 }
 

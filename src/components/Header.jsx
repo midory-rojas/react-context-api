@@ -1,9 +1,16 @@
 import { NavLink, Link } from "react-router-dom";
 import Logo from "./Logo";
-import { BudgetContext } from "../context/BudgetContext";
-import { useContext } from "react";
+import { usoBudget } from "../context/BudgetContext"; //Importo la funzione usoBudget per usarlo dentro il header
+
 
 export default function Header() {
+    const { toggleBudget, budget } = usoBudget();
+
+    //Chiamo alle funzione che sono all'intern di usoBudget per usarlo e richiamarlo dentro del bottone
+    // toggleBudget e budget
+    
+
+    
     const links = [{
         nome: "Homepage",
         path: "/",
@@ -17,14 +24,6 @@ export default function Header() {
         path: "/prodotti",
     }
     ]
-
-    const { budget, setBudget, handleClick } = useContext(BudgetContext) // Use context modo in cui utilliziamo per chiamare per prendere i dati che sttiamo nel budgetcontext
-
-   
-
-    function ModificaTestoBottone() {
-        return budget ? "Disattiva budget" : "Imposta budget"
-    }
 
 
     return (
@@ -47,7 +46,8 @@ export default function Header() {
                                 </NavLink>
                             ))}
                         </ul>
-                        <button className="btn btn-primary" onClick={handleClick}>{ModificaTestoBottone()}</button>
+                        {/* Faccio la condizione con ternario per Attivare e Desattivare il bottone, anche aggiungo temmplate literal per cambiare il colore nella condizione */}
+                        <button  onClick={toggleBudget} className={`btn btn-${budget ? "light" : "secondary"}`}>{budget ? "Disattiva budget mode" : "Attiva budget mode"}</button> 
                     </div>
                 </div>
             </nav>

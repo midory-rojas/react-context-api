@@ -34,7 +34,7 @@ export default function Header() {
                     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                         <span className="navbar-toggler-icon"></span>
                     </button>
-                    <div className="collapse navbar-collapse" id="navbarNav">
+                    <div className="collapse navbar-collapse d-flex justify-content-between" id="navbarNav">
                         <ul className="navbar-nav">
                             {links.map((link, index) => (
                                 <NavLink key={index}
@@ -47,7 +47,7 @@ export default function Header() {
                             ))}
                         </ul>
                         {/* Faccio la condizione con ternario per Attivare e Desattivare il bottone, anche aggiungo temmplate literal per cambiare il colore nella condizione */}
-                        <button  onClick={toggleBudget} className={`btn btn-${budget ? "light" : "secondary"}`}>{budget ? "Disattiva budget mode" : "Attiva budget mode"}</button> 
+                        <button  onClick={toggleBudget} className={`btn btn-${budget ? "light" : "secondary"}`}>{budget ? "Disattiva risparmio" : "Risparmia prodotti sotto i 30€"}</button> 
                     </div>
                 </div>
             </nav>

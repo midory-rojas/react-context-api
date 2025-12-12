@@ -8,6 +8,7 @@ export default function Card({ prodotto }) {
             <img src={image} className="card-img" alt={title} height={450}/>
             <div className="card-body">
                 <h5>{title}</h5>
+                <p>{price}€</p>
                 <Link to={`/prodotti/${prodotto.id}`}>Vedi dettaglio</Link>
             </div>
         </div>

@@ -12,7 +12,7 @@ export default function Prodotti() {
 
     useEffect(() => {
         axios.get("https://fakestoreapi.com/products").then((resp) => {
-            console.log(resp)
+            console.log(resp.data)
             setProdotti(resp.data);
 
         });

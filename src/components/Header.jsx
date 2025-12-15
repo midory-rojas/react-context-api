@@ -47,7 +47,7 @@ export default function Header() {
                             ))}
                         </ul>
                         {/* Faccio la condizione con ternario per Attivare e Desattivare il bottone, anche aggiungo temmplate literal per cambiare il colore nella condizione */}
-                        <button  onClick={toggleBudget} className={`btn btn-${budget ? "light" : "secondary"}`}>{budget ? "Disattiva risparmio" : "Risparmia prodotti sotto i 30€"}</button> 
+                        <button  onClick={toggleBudget} className={`btn btn-${budget ? "light" : "secondary"}`}>{budget ? "Disattiva risparmio" : "Risparmia prodotti sotto 30€"}</button> 
                     </div>
                 </div>
             </nav>
